@@ -1,0 +1,101 @@
+    /* Navigation Bar Styling */
+    nav {
+        background-color: #6f4e37;
+    }
+
+    nav a {
+        color: #f2f2f2;
+        padding: 14px 20px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    nav a:hover {
+        background-color: #ac8971;
+        color: white;
+    }
+
+    /* Body Styling */
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f7f2e7;
+        color: #333;
+    }
+
+    /* Table Styling */
+    table {
+        margin-top: 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    table thead {
+        background-color: #6f4e37;
+        color: #fff;
+    }
+
+    table th,
+    table td {
+        padding: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    table td img {
+        border-radius: 50%;
+    }
+
+    /* Button Styling */
+    .button,
+    .btn {
+        background-color: #6f4e37;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover,
+    .btn:hover {
+        background-color: #ac8971;
+        color: #fff;
+    }
+
+    /* Add User Button Styling */
+    .button {
+        position: absolute;
+        top: 210px;
+        left: 490px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    /* User Info Styling */
+    .navbar-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: #f2f2f2;
+    }
+
+    img.user-picture {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    /* Custom Link Styling for Edit/Delete */
+    td a {
+        font-size: 16px;
+        color: #6f4e37;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: color 0.3s;
+    }
+
+    td a:hover {
+        color: #ac8971;
+    }
