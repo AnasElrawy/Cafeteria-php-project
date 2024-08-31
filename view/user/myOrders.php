@@ -156,7 +156,7 @@ if(isset($_GET['order-id'])) {
 
             ?>
                 <div style="width:20%;">
-                    <img src="../../<?php echo $img; ?> " alt="<?php echo $img; ?> " style="width:200px;height:200px;margin:20px;border-radius: 10%;">
+                    <img src="<?php echo $img; ?> " alt="<?php echo $img; ?> " style="width:200px;height:200px;margin:20px;border-radius: 10%;">
                     <span><?php echo $Quantity; ?> </span>
                 </div>
             <?php
@@ -210,8 +210,3 @@ require("../layout/pagenation.php");
 
 
 
-
-    
-   <!-- select Picture from Products,Order_Details where Order_Details.Order_ID = 1 and Products.Product_ID= Order_Details.Product_ID ; -->
-   <!-- select Picture, Order_Details.Quantity  from Products,Order_Details where Order_Details.Order_ID = 2 and Products.Produ
-ct_ID= Order_Details.Product_ID -->

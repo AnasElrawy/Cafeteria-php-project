@@ -24,14 +24,14 @@ body {
 }
 
 .btn-custom:hover {
-    background-color: #6f4e37; /* لزيادة التفاعل عند التحويم */
+    background-color: #6f4e37; 
 }
 
 .btn-custom {
     background-color: #8a654a;
     color: #ffffff;
     border: none;
-    padding: 5px 10px; /* لتصغير الزرار */
+    padding: 5px 10px; 
 }
 
 .btn-custom:hover {

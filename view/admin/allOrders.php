@@ -151,7 +151,7 @@ else{
 
             ?>
                 <div style="width:20%;">
-                    <img src="../../<?php echo $img; ?> " alt="<?php echo $img; ?> " style="width:200px;height:200px;margin:20px;border-radius: 10%;">
+                    <img src="<?php echo $img; ?> " alt="<?php echo $img; ?> " style="width:200px;height:200px;margin:20px;border-radius: 10%;">
                     <span><?php echo $Quantity; ?> </span>
                 </div>
             <?php
@@ -200,20 +200,3 @@ require("../layout/pagenation.php");
 
 
 
-
-
-
-
-    
-   <!-- select Picture from Products,Order_Details where Order_Details.Order_ID = 1 and Products.Product_ID= Order_Details.Product_ID ; -->
-   <!-- select Picture, Order_Details.Quantity  from Products,Order_Details where Order_Details.Order_ID = 2 and Products.Produ
-ct_ID= Order_Details.Product_ID -->
-
-
-<!-- select Orders.Total_Amount,Orders.Order_ID,Orders.Order_Date,Users.Name,Users.Room_Number,Orders.Status from Orders,Users where Orders.User_ID=Users.User_id; -->
-
-
-<!-- Orders.Total_Amount,Orders.Order_ID,Orders.Order_Date,Users.Name,Users.Room_Number,Orders.Status'," Orders.User_ID=Users.User_id -->
-
-
-<!-- select Orders.Total_Amount,Orders.Order_ID,Orders.Order_Date,Users.Name,Users.Room_Number,Orders.Status from Orders,Users where Orders.User_ID=Users.User_id; -->

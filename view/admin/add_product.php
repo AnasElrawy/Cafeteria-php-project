@@ -12,22 +12,6 @@
 <body>
     
 
-    <!-- <header>
-        <nav class="navbar navbar-expand-lg navbar-custom">
-            <a class="navbar-brand" href="home.php">Cafeteria</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.php">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.php">PRODUCTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="users.php">USERS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="manual_orders.php">MANUAL ORDERS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="checks.php">CHECKS</a></li>
-                </ul>
-                <div class="navbar-text"> -->
                     <?php
                     session_start();
 
@@ -40,17 +24,9 @@
                     $adminStmt->execute();
                     $admin = $adminStmt->fetch(PDO::FETCH_ASSOC);
 
-                    // if ($admin) {
-                    //     echo "<img src='" . $admin['Picture'] . "' alt='Admin Profile Picture' class='img-fluid rounded-circle' style='width: 40px; height: 40px;'>";
-                    //     echo "<span class='ml-2'>" . $admin['Name'] . "</span>";
-                    // } else {
-                    //     echo "No admin found";
-                    // }
+    
                     ?>
-                <!-- </div>
-            </div>
-        </nav>
-    </header> -->
+
     <main class="container mt-5">
         <h1 class="text-center mb-4">Add Product</h1>
 
@@ -80,9 +56,7 @@
 </form>
 
         <?php
-        // Include database connection
-        // require_once 'database.php';
-
+       
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Get form data
             $productName = $_POST['product_name'];
@@ -92,9 +66,7 @@
 
             // Create uploads directory if it doesn't exist
             $targetDir = "../../assets/";
-            // if (!file_exists($targetDir)) {
-            //     mkdir($targetDir, 0777, true);
-            // }
+            
 
             // Handle image upload
             $targetFile = $targetDir . basename($_FILES['product_image']['name']);

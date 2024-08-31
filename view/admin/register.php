@@ -29,36 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' &&
 
 
 
-            // if($_FILES["profile_image"]["name"]){
-
-             
-            // }
+      
 
 
 
-    // $resource = fopen('file.txt', 'a');
-    // if (is_resource($resource)) {
-    //     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == UPLOAD_ERR_OK) {
-    //         if (move_uploaded_file($_FILES['profile_image']['tmp_name'], $targetFile)) {
-    //             fwrite($resource, 
-    //                 $_POST['Name'] . ',' . 
-    //                 $_POST['Email'] . ',' . 
-    //                 $_POST['Password'] . ',' . 
-    //                 $_POST['Room_Number'] . ',' . 
-    //                 $targetFile . ',' . 
-    //                 $_POST['Role'] . "\n"
-    //             );
-    //             fclose($resource);
-    //         } else {
-    //             echo "Error moving the uploaded file.";
-    //         }
-    //     } else {
-    //         echo "Error uploading file: " . (isset($_FILES['profile_image']) ? $_FILES['profile_image']['error'] : 'File not selected');
-    //     }
-    // } else {
-    //     echo 'Invalid filename'
-    //     ;
-    // }
+  
 }  else {
     include("../layout/regesterForm.html");
 }

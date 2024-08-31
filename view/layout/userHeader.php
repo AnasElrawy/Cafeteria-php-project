@@ -1,19 +1,4 @@
-    <!-- Navigation Bar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-custom">
-        
-        <a class="navbar-brand" href="homeUser.php">CAFETERIA</a>
-        <a class="nav-link" href="http://localhost/proj_php/view/user/orderByUser.php">Home</a>
-        <a class="nav-link" href="http://localhost/proj_php/view/user/myOrders.php?page-nr=1">My Orders</a>
-    
-        <div class="ml-auto">
-        
-            <a class="nav-link" href="../logout.php">Log Out</a>
-            <span class="navbar-text text-white mr-2">
-                <?php //echo $_SESSION['Name'];?>
-            </span>
-            <img src="assets/user.jpg" alt="User" style="width:40px; height:40px; border-radius:50%;">
-        </div>
-    </nav> -->
+
 
 
     

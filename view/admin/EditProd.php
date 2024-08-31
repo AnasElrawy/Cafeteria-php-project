@@ -1,12 +1,8 @@
 <?php
 // Include the database connection file
-session_start();
-
-
 require("../layout/adminHeader.php");
 require("../../module/DBconection.php");
 $DB = new db();
-// $connection = $DB->get_connection();
 
 // Get the product ID from the URL
 $productId = $_GET['id'];
@@ -26,22 +22,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $updatedPrice = $_POST['price'];
     $updatedStatus = $_POST['status'];
 
-    $updateSql = "UPDATE Products SET Name = :name, Category = :category, Price = :price, Status = :status WHERE Product_ID = :id";
-    $updateStmt = $DB->get_connection()->prepare($updateSql);
-    $updateStmt->bindParam(':name', $updatedName);
-    $updateStmt->bindParam(':category', $updatedCategory);
-    $updateStmt->bindParam(':price', $updatedPrice);
-    $updateStmt->bindParam(':status', $updatedStatus);
-    $updateStmt->bindParam(':id', $productId);
+    // Image handling
+    $targetDir = "../../uploads/"; // Assuming uploads folder is in the htdocs directory
+    $fileName = basename($_FILES["image"]["name"]);
+    $targetFilePath = $targetDir . $fileName;
+    $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-    if ($updateStmt->execute()) {
-        // Redirect back to the index page
-        header('Location: allProduct.php');
-        exit();
+    $allowTypes = ['jpg', 'png', 'jpeg', 'gif']; // Allowed image file types
+
+    if (isset($_FILES["image"]) && !empty($_FILES["image"]["name"])) {
+        // Validate file type
+        if (in_array($fileType, $allowTypes)) {
+            // Check if image file is uploaded without errors
+            if ($_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+                // Upload image
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
+                    echo "Image uploaded successfully.";
+
+                    // Update the database with the new image path
+                    $updateSql = "UPDATE Products SET Name = :name, Category = :category, Price = :price, Status = :status, Picture = :image WHERE Product_ID = :id";
+                    $updateStmt = $DB->get_connection()->prepare($updateSql);
+                    $updateStmt->bindParam(':name', $updatedName);
+                    $updateStmt->bindParam(':category', $updatedCategory);
+                    $updateStmt->bindParam(':price', $updatedPrice);
+                    $updateStmt->bindParam(':status', $updatedStatus);
+                    $updateStmt->bindParam(':image', $targetFilePath); // Bind the image file name
+                    $updateStmt->bindParam(':id', $productId);
+
+                    if ($updateStmt->execute()) {
+                        // Redirect back to the index page
+                        header('Location: allProduct.php');
+                        exit();
+                    } else {
+                        // Handle update failure
+                        echo 'Error updating product.';
+                    }
+                } else {
+                    echo "Sorry, there was an error uploading your image.";
+                }
+            } else {
+                echo "Sorry, there was an error uploading your image.";
+            }
+        } else {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        }
     } else {
-        // Handle update failure
-        echo 'Error updating product.';
+        // If no image is uploaded, use the existing image path from the database (if available)
+        $fileName = $product['Picture'];
     }
+
+    // ... rest of the code remains the same
 }
 ?>
 
@@ -58,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container mt-5">
         <h1 class="text-center mb-4">Edit Product</h1>
 
-        <form method="post" action="" class="p-4 bg-light rounded shadow-sm">
+        <form method="post" action="" enctype="multipart/form-data" class="p-4 bg-light rounded shadow-sm">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" name="name" class="form-control" value="<?php echo htmlspecialchars($product['Name']); ?>" required>
@@ -81,6 +111,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="unavailable" <?php if ($product['Status'] === 'unavailable') echo 'selected'; ?>>Unavailable</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" name="image" id="image" class="form-control-file">
+            </div>
+
+            <?php if (!empty($product['Product_Image'])): // Display existing image if available ?>
+                <div class="form-group">
+                    <label for="current_image">Current Image:</label>
+                    <img src="<?php echo $targetDir . $product['Product_Image']; ?>" alt="Product Image" class="img-fluid">
+                </div>
+            <?php endif; ?>
 
             <button type="submit" class="btn btn-custom btn-block mt-4">Save Changes</button>
         </form>

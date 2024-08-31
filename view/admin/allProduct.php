@@ -10,22 +10,7 @@
 </head>
 
 <body>
-    <!-- <header>
-        <nav class="navbar navbar-expand-lg navbar-custom">
-            <a class="navbar-brand" href="home.php">Cafeteria</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.php">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.php">PRODUCTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="users.php">USERS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="manual_orders.php">MANUAL ORDERS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="checks.php">CHECKS</a></li>
-                </ul>
-                <div class="navbar-text"> -->
+   
                     <?php
                     session_start();
 
@@ -33,22 +18,9 @@
                     require("../layout/adminHeader.php");
                     require("../../module/DBconection.php");
                     $DB = new db();
-                    // $adminSql = "SELECT Name, Picture FROM Users WHERE Role = 'Admin'";
-                    // $adminStmt = $DB->get_connection()->prepare($adminSql);
-                    // $adminStmt->execute();
-                    // $admin = $adminStmt->fetch(PDO::FETCH_ASSOC);
-
-                    // if ($admin) {
-                    //     echo "<img src='" . $admin['Picture'] . "' alt='Admin Profile Picture' class='img-fluid rounded-circle' style='width: 40px; height: 40px;'>";
-                    //     echo "<span class='ml-2'>" . $admin['Name'] . "</span>";
-                    // } else {
-                    //     echo "No admin found";
-                    // }
+                 
                     ?>
-                <!-- </div>
-            </div>
-        </nav>
-    </header> -->
+
 
     <main class="container mt-4">
         <h1 class="mb-4">Product Management</h1>
