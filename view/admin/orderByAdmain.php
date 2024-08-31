@@ -106,7 +106,7 @@ $drinks = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 <div class="row" id="drinkList">
                     <?php foreach ($drinks as $drink): ?>
                     <div class="col-md-3 drink-item">
-                        <img src="../../<?php echo $drink['Picture']; ?>" class="drink-img"
+                        <img src="<?php echo $drink['Picture']; ?>" class="drink-img"
                             data-name="<?php echo $drink['Name']; ?>" data-price="<?php echo $drink['Price']; ?>"
                             alt="<?php echo $drink['Name']; ?>">
                         <p><?php echo $drink['Name']; ?> (<?php echo $drink['Price']; ?> LE)</p>

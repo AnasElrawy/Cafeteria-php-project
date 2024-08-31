@@ -1,6 +1,12 @@
 <?php
 // error_reporting(E_ALL);
 // ini_set('display_errors', '1');
+session_start();
+
+
+require("../layout/adminHeader.php");
+
+
 $targetDir = '../../uploads/';
 $targetFile = $targetDir . basename($_FILES["profile_image"]["name"]);
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && 

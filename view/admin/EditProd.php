@@ -1,6 +1,9 @@
 <?php
 // Include the database connection file
+session_start();
 
+
+require("../layout/adminHeader.php");
 require("../../module/DBconection.php");
 $DB = new db();
 // $connection = $DB->get_connection();

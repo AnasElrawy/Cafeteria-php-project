@@ -26,6 +26,6 @@
         <div class="d-flex align-items-center">
             <a class="nav-link mr-3" href="../logout.php">Log Out</a>
             <span class="navbar-text text-white mr-3"><?php echo $_SESSION['Name'];?></span>
-            <img src="assets/user.jpg" alt="User" style="width:40px; height:40px; border-radius:50%;">
+            <img src="<?php echo $_SESSION['user_image']; ?>" alt="User" style="width:40px; height:40px; border-radius:50%;">
         </div>
     </nav>

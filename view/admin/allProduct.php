@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <nav class="navbar navbar-expand-lg navbar-custom">
             <a class="navbar-brand" href="home.php">Cafeteria</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -25,27 +25,30 @@
                     <li class="nav-item"><a class="nav-link" href="manual_orders.php">MANUAL ORDERS</a></li>
                     <li class="nav-item"><a class="nav-link" href="checks.php">CHECKS</a></li>
                 </ul>
-                <div class="navbar-text">
+                <div class="navbar-text"> -->
                     <?php
+                    session_start();
 
+
+                    require("../layout/adminHeader.php");
                     require("../../module/DBconection.php");
                     $DB = new db();
-                    $adminSql = "SELECT Name, Picture FROM Users WHERE Role = 'Admin'";
-                    $adminStmt = $DB->get_connection()->prepare($adminSql);
-                    $adminStmt->execute();
-                    $admin = $adminStmt->fetch(PDO::FETCH_ASSOC);
+                    // $adminSql = "SELECT Name, Picture FROM Users WHERE Role = 'Admin'";
+                    // $adminStmt = $DB->get_connection()->prepare($adminSql);
+                    // $adminStmt->execute();
+                    // $admin = $adminStmt->fetch(PDO::FETCH_ASSOC);
 
-                    if ($admin) {
-                        echo "<img src='" . $admin['Picture'] . "' alt='Admin Profile Picture' class='img-fluid rounded-circle' style='width: 40px; height: 40px;'>";
-                        echo "<span class='ml-2'>" . $admin['Name'] . "</span>";
-                    } else {
-                        echo "No admin found";
-                    }
+                    // if ($admin) {
+                    //     echo "<img src='" . $admin['Picture'] . "' alt='Admin Profile Picture' class='img-fluid rounded-circle' style='width: 40px; height: 40px;'>";
+                    //     echo "<span class='ml-2'>" . $admin['Name'] . "</span>";
+                    // } else {
+                    //     echo "No admin found";
+                    // }
                     ?>
-                </div>
+                <!-- </div>
             </div>
         </nav>
-    </header>
+    </header> -->
 
     <main class="container mt-4">
         <h1 class="mb-4">Product Management</h1>

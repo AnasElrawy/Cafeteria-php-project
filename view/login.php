@@ -90,7 +90,7 @@ if(!empty($_POST['email'])&&!empty($_POST['password'])){
         $_SESSION['User_ID'] = $result[0]["User_ID"];
         $_SESSION['Role'] = $result[0]["Role"];
         $_SESSION['Name'] = $result[0]["Name"];
-        $_SESSION['user_image'] = $result[0]["Name"];
+        $_SESSION['user_image'] = $result[0]["Picture"];
 
 
 

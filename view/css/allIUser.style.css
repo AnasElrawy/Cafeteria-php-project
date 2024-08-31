@@ -1,5 +1,5 @@
     /* Navigation Bar Styling */
-    nav {
+    /* nav {
         background-color: #6f4e37;
     }
 
@@ -13,37 +13,40 @@
     nav a:hover {
         background-color: #ac8971;
         color: white;
-    }
+    } */
 
     /* Body Styling */
-    body {
+    /* body {
         margin: 0;
         font-family: 'Arial', sans-serif;
         background-color: #f7f2e7;
         color: #333;
-    }
+    } */
 
     /* Table Styling */
-    table {
+
+
+    
+    .tabl {
         margin-top: 40px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         overflow: hidden;
     }
 
-    table thead {
+    .tabl thead {
         background-color: #6f4e37;
         color: #fff;
     }
 
-    table th,
-    table td {
+    .tabl th,
+    .tabl td {
         padding: 12px;
         text-align: center;
         vertical-align: middle;
     }
 
-    table td img {
+    .tabl td img {
         border-radius: 50%;
     }
 
@@ -74,11 +77,11 @@
     }
 
     /* User Info Styling */
-    .navbar-text {
+    /* .navbar-text {
         font-size: 18px;
         font-weight: 500;
         color: #f2f2f2;
-    }
+    } */
 
     img.user-picture {
         width: 40px;
@@ -87,7 +90,7 @@
     }
 
     /* Custom Link Styling for Edit/Delete */
-    td a {
+    .Htd a {
         font-size: 16px;
         color: #6f4e37;
         text-decoration: none;
@@ -96,6 +99,6 @@
         transition: color 0.3s;
     }
 
-    td a:hover {
+    .Htd a:hover {
         color: #ac8971;
     }

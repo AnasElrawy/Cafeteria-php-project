@@ -1,9 +1,9 @@
-nav {
+/* nav {
   background-color: #6f4e37;
-  /* overflow: hidden; */
-}
+  overflow: hidden;
+} */
 
-nav a {
+/* nav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
@@ -15,7 +15,7 @@ nav a {
 nav a:hover {
   background-color: #ac8971;
   color: white;
-}
+} */
 
 /* nav a.active {
     background-color: #4CAF50;
@@ -83,10 +83,10 @@ input[type="reset"] {
 
 }
 
-.button:hover {
+/* .button:hover {
   background-color: #ac8971;
 
-}
+} */
 
 td a {
   text-decoration: none;
@@ -96,10 +96,10 @@ td a {
 
 }
 
-td a:hover {
+/* td a:hover {
   color: #ac8971;
-  /* this about edit and delete style in all users*/
-}
+  this about edit and delete style in all users
+} */
 
 .btn {
   color: white;
@@ -107,7 +107,7 @@ td a:hover {
 
 }
 
-.btn:hover {
+/* .btn:hover {
   background-color: #ac8971;
   color: white;
-}
+} */

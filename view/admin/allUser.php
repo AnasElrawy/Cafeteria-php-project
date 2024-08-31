@@ -5,9 +5,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Add User</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
         <!-- <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css"> -->
+       
+       
+        <link rel="stylesheet" href="../insertOrder.style.css">
+
+
         
-        <link rel="stylesheet" href="../css/allIUser.style.css"> 
+        <!-- <link rel="stylesheet" href="../css/allIUser.style.css">  -->
+
+
+        <style>
+            
+        </style>
 
     </head>
     <body>
@@ -15,7 +27,7 @@
     </html>
 
 
-    <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center">
+    <!-- <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
             <a class="navbar-brand" href="homeUser.php">CAFETERIA</a>
             <a class="nav-link" href="http://localhost/proj_php/view/admin/orderByAdmain.php">Home</a>
@@ -29,16 +41,19 @@
         </div>
         <div class="d-flex align-items-center">
             <a class="nav-link" href="../logout.php">Log Out</a>
-            <span class="navbar-text"><?php echo $_SESSION['Name'];?></span>
+            <span class="navbar-text"><//?php echo $_SESSION['Name'];?></span>
             <img src="assets/user.jpg" alt="User" class="user-picture">
         </div>
-    </nav>
+    </nav> -->
 
 
     <?php
 
+session_start();
+
+
     
-    // include ("../layout/adminHeader.php");
+    include ("../layout/adminHeader.php");
 
     require("../../module/DBconection.php");
 
@@ -55,18 +70,18 @@
     }
     ?>
 
-    <br>
-    <h2 style="text-align:center;">All Users</h2>
-    <br>
-    <a href="register.php" class="button" style="position: absolute; top:210px; left: 490px;">Add User</a>
+   
     <br>
 
-    <table class="table" style="position: absolute; top: 320px; left: 110px; width:80%">
+    <table class="tabl" style="position: absolute; top: 320px; left: 110px; width:80%">
     <body>
     
 
     <h2 class="text-center mt-4">All Users</h2>
-    <a href="register.php" class="button">Add User</a>
+
+    <a href='register.php' style="position: relativ; top: 100px; left: 150px; width:100% " class='btn btn-custom btn-sm mb-2 mr-2'>Add User</a>
+
+    <!-- <a href="register.php" id="addUser" class="btn btn-custom btn-sm mb-2 mr-2" >Add User</a> -->
 
     <table class="table table-striped mx-auto" style="width:80%">
         <thead class="table-light">
@@ -92,12 +107,12 @@
                     foreach ($row as $key => $value) {
                         if ($key == 'Picture') {
                             $imagePath = "../../uploads/" . basename($value); 
-                            echo "<td><img src='$imagePath' alt='Profile Picture' style='width: 50px; height: 50px;'></td>";
+                            echo "<td class='Htd'><img src='$imagePath' alt='Profile Picture' style='width: 50px; height: 50px;'></td>";
                         } else {
-                            echo "<td>" . htmlspecialchars($value) . "</td>"; 
+                            echo "<td class='Htd'>" . htmlspecialchars($value) . "</td>"; 
                         }
                     }
-                    echo "<td>
+                    echo "<td class='Htd'>
                     <a href=\"EditUser.php?id={$row['User_ID']}\" class='btn btn-warning btn-sm'>Edit</a>
                     <a href=\"javascript:void(0);\" onclick=\"confirmDelete({$row['User_ID']});\" class='btn btn-danger btn-sm ml-2'>Delete</a>
                 </td>";
@@ -111,9 +126,14 @@
     </table>
 
     <script>
+        
+   
         function confirmDelete(userId) {
             if (confirm("Are you sure you want to delete this user?")) {
                 window.location.href = "../../controller/DeleteUser.php?id=" + userId;
             }
         }
     </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
