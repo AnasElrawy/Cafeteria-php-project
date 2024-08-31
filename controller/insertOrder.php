@@ -34,14 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $orderId = $DB->get_connection()->lastInsertId();
 
-        // // Insert room details
-        // $stmt = $DB->prepare('INSERT INTO room (room_no) VALUES (?)');
-        // $stmt->execute([$orderDetails['room']]);
-        // $roomId = $DB->lastInsertId();
-
-        // // Update the user with the room Id 
-        // $stmt = $DB->prepare('UPDATE user SET room_id = ? WHERE id = ?');
-        // $stmt->execute([$roomId, $userId]);
+ 
 
         // Insert order items
         $stmt = $DB->get_connection()->prepare('SELECT Product_ID FROM Products WHERE Name = ?');

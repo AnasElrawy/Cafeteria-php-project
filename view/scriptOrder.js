@@ -75,7 +75,6 @@ $(document).ready(function() {
         var orderDetails = {
             items: [],
             notes: $('#notes').val(),
-            room: $('#room').val(),
             totalPrice: $('#totalPrice').text()
             
         };

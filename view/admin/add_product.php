@@ -19,11 +19,7 @@
                     require("../../module/DBconection.php");
                      $DB = new db();
 
-                    $adminSql = "SELECT Name, Picture FROM Users WHERE Role = 'Admin'";
-                    $adminStmt = $DB->get_connection()->prepare($adminSql);
-                    $adminStmt->execute();
-                    $admin = $adminStmt->fetch(PDO::FETCH_ASSOC);
-
+                   
     
                     ?>
 
